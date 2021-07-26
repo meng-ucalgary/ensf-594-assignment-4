@@ -31,11 +31,10 @@ class Q3 {
             // processing operators
             else if (currChar == '*' || currChar == '/' || currChar == '+' || currChar == '-') {
                 try {
-                    double a = (double) stack.pop();
+                    // order gets reversed because of the stack, so second operand becomes first and
+                    // vice-versa
                     double b = (double) stack.pop();
-
-                    System.out.println(a);
-                    System.out.println(b);
+                    double a = (double) stack.pop();
 
                     switch (currChar) {
                         case '*':
