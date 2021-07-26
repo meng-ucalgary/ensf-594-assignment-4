@@ -27,7 +27,6 @@ class Q2 {
             // output letters and digits as it is
             if (String.valueOf(currChar).matches("[a-zA-Z0-9]")) {
                 sb.append(currChar);
-                sb.append(" ");
             }
 
             // processing operators
@@ -42,7 +41,6 @@ class Q2 {
                     else {
                         while (this.precedence(currChar) <= this.precedence((Character) operators.peek())) {
                             sb.append(operators.pop());
-                            sb.append(" ");
                         }
 
                         operators.push(Character.valueOf(currChar));
@@ -62,7 +60,6 @@ class Q2 {
         while (true) {
             try {
                 sb.append(operators.pop());
-                sb.append(" ");
             }
 
             catch (StackUnderflowError e) {
