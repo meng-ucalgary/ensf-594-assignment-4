@@ -4,16 +4,16 @@
  * @author Bhavyai Gupta
  */
 public class Node {
-    public char data;
+    public Object data;
     public Node next;
 
     /**
-     * Creates a new node with char <code>c</code>
+     * Creates a new node with object <code>o</code>
      *
-     * @param c char to be stored in the Node
+     * @param o object to be stored in the Node
      */
-    public Node(char c) {
-        this.data = c;
+    public Node(Object o) {
+        this.data = o;
         this.next = null;
     }
 }

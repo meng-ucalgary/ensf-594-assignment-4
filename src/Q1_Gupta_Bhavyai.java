@@ -29,13 +29,13 @@ class Q1 {
                 case '{':
                 case '[':
                     // push all the opening parenthesis
-                    p.push(currChar);
+                    p.push(Character.valueOf(currChar));
                     break;
 
                 case ')': {
                     try {
                         // last opened brace must match
-                        if (p.peek() == '(') {
+                        if ((char) p.peek() == '(') {
                             p.pop();
                         }
 
@@ -54,7 +54,7 @@ class Q1 {
                 case '}': {
                     try {
                         // last opened brace must match
-                        if (p.peek() == '{') {
+                        if ((char) p.peek() == '{') {
                             p.pop();
                         }
 
@@ -73,7 +73,7 @@ class Q1 {
                 case ']': {
                     try {
                         // last opened brace must match
-                        if (p.peek() == '[') {
+                        if ((char) p.peek() == '[') {
                             p.pop();
                         }
 

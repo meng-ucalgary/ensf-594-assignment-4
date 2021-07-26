@@ -1,5 +1,5 @@
 /**
- * A char stack
+ * A stack
  *
  * @author Bhavyai Gupta
  */
@@ -16,10 +16,10 @@ public class MyStack {
     /**
      * Pushes the item at the top of the stack
      *
-     * @param c the char to be pushed
+     * @param o the Object to be pushed
      */
-    public void push(char c) {
-        Node temp = new Node(c);
+    public void push(Object o) {
+        Node temp = new Node(o);
         temp.next = this.top;
         this.top = temp;
     }
@@ -27,16 +27,16 @@ public class MyStack {
     /**
      * Pops an item from the top of the stack
      *
-     * @return the char popped
+     * @return the Object popped
      * @throws StackUnderflowError if the stack is empty
      */
-    public char pop() throws StackUnderflowError {
+    public Object pop() throws StackUnderflowError {
         if (this.isEmpty()) {
             throw new StackUnderflowError("The stack is empty");
         }
 
         else {
-            char t = this.top.data;
+            Object t = this.top.data;
             this.top = this.top.next;
             return t;
         }
@@ -45,10 +45,10 @@ public class MyStack {
     /**
      * Returns the topmost item on the stack
      *
-     * @return the topmost char
+     * @return the topmost Object
      * @throws StackUnderflowError if the stack is empty
      */
-    public char peek() throws StackUnderflowError {
+    public Object peek() throws StackUnderflowError {
         if (this.isEmpty()) {
             throw new StackUnderflowError("The stack is empty");
         }

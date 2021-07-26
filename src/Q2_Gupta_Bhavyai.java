@@ -34,24 +34,24 @@ class Q2 {
             else if (currChar == '*' || currChar == '/' || currChar == '+' || currChar == '-') {
                 try {
                     // higher operators gets pushed to stack
-                    if (this.precedence(currChar) > this.precedence(operators.peek())) {
-                        operators.push(currChar);
+                    if (this.precedence(currChar) > this.precedence((Character) operators.peek())) {
+                        operators.push(Character.valueOf(currChar));
                     }
 
                     // lower operator pops all higher and equal operators, but themselves go (pushed) to stack
                     else {
-                        while (this.precedence(currChar) <= this.precedence(operators.peek())) {
+                        while (this.precedence(currChar) <= this.precedence((Character) operators.peek())) {
                             sb.append(operators.pop());
                             sb.append(" ");
                         }
 
-                        operators.push(currChar);
+                        operators.push(Character.valueOf(currChar));
                     }
                 }
 
                 // empty stack always accept
                 catch (StackUnderflowError e) {
-                    operators.push(currChar);
+                    operators.push(Character.valueOf(currChar));
                 }
             }
 
